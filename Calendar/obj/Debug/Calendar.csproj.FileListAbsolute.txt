@@ -1,0 +1,5 @@
+C:\Users\Juanjo\Desktop\Calendar Exercise\Calendar\bin\Calendar.dll
+C:\Users\Juanjo\Desktop\Calendar Exercise\Calendar\bin\Calendar.pdb
+C:\Users\Juanjo\Desktop\Calendar Exercise\Calendar\obj\Debug\Calendar.csprojResolveAssemblyReference.cache
+C:\Users\Juanjo\Desktop\Calendar Exercise\Calendar\obj\Debug\Calendar.dll
+C:\Users\Juanjo\Desktop\Calendar Exercise\Calendar\obj\Debug\Calendar.pdb
