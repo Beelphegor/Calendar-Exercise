@@ -8,5 +8,5 @@
         });
     });
 app.controller("mainCtrl", function($scope) {
-    $scope.helloWorld = "hello world!";
+    
 });
