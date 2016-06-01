@@ -43,6 +43,15 @@ app.controller("mainCtrl", function($scope) {
             }
             tempDate.setDate(tempDate.getDate() + 1);
         }
+        if (tempDate.getDay() < 6) {
+            for (var z = tempDate.getDay(); z <= 6 ; z++) {
+                $scope.months[$scope.months.length - 1].weeks[$scope.months[$scope.months.length - 1].weeks.length - 1].days.push({
+                    day: null,
+                    date: "-"
+                });
+            }
+        }
+
         console.log($scope.months);
     }
 
@@ -51,7 +60,7 @@ app.controller("mainCtrl", function($scope) {
             for (var z = 0; z < tempDate.getDay() ; z++) {
                 $scope.months[$scope.months.length - 1].weeks[$scope.months[$scope.months.length - 1].weeks.length - 1].days.push({
                     day: null,
-                    date: null
+                    date: "-"
                 });
             }
         }

@@ -1,9 +1,9 @@
 ﻿.cel {
+    background-color: gray;
+}
+.cel.green {
     background-color: green;
 }
 .cel.yellow {
-    background-color: yellow;
-}
-.yellow {
     background-color: yellow;
 }
