@@ -29,6 +29,7 @@ app.controller("mainCtrl", function ($scope, $http) {
                 });
                 populateDaysOnWeeks(tempDate, weekIndex);
             } else if (monthIsNotPresentOnArray(tempDate)) {
+                populateRemainingDaysOfTheWeek(tempDate);
                 weekIndex = 0;
                 $scope.months.push({
                     monthIndex: tempDate.getMonth(),
@@ -43,14 +44,7 @@ app.controller("mainCtrl", function ($scope, $http) {
             }
             tempDate.setDate(tempDate.getDate() + 1);
         }
-        if (tempDate.getDay() < 6) {
-            for (var z = tempDate.getDay(); z <= 6 ; z++) {
-                $scope.months[$scope.months.length - 1].weeks[$scope.months[$scope.months.length - 1].weeks.length - 1].days.push({
-                    day: null,
-                    date: "-"
-                });
-            }
-        }
+        populateRemainingDaysOfTheWeek(tempDate);
 
 
         $http.get("http://holidayapi.com/v1/holidays",{ country: $scope.countryCode, year: $scope.startDate.getFullYear }).then(function success(response) {
@@ -59,6 +53,17 @@ app.controller("mainCtrl", function ($scope, $http) {
 
 
         console.log($scope.months);
+    }
+
+    function populateRemainingDaysOfTheWeek(tempDate) {
+        if (tempDate.getDay() < 6) {
+            for (var z = tempDate.getDay() ; z <= 6 ; z++) {
+                $scope.months[$scope.months.length - 1].weeks[$scope.months[$scope.months.length - 1].weeks.length - 1].days.push({
+                    day: null,
+                    date: "-"
+                });
+            }
+        }
     }
 
     function populateDaysOnWeeks(tempDate, weekIndex) {
