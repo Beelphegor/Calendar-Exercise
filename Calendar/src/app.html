@@ -32,7 +32,7 @@
         <div ng-repeat="week in month.weeks">
             <div class="row">
                 <div class="col-sm-3"></div>
-                <div class="col-sm-1" ng-repeat="day in week.days">{{day.date}}</div>
+                <div class="col-sm-1 cel" ng-repeat="day in week.days" ng-class="{yellow: day.day == 0  || day.day == 6}">{{day.date}}</div>
                 <div class="col-sm-2"></div>
             </div>
         </div>
