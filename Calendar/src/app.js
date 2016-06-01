@@ -13,7 +13,7 @@ app.controller("mainCtrl", function ($scope, $http) {
     $scope.countryCode = null;
     $scope.months = [];
     $scope.calculate = calculate;
-
+    $scope.monthsText = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"];
     function calculate() {
         var tempDate = new Date($scope.startDate.getTime());
         var weekIndex = 0;
