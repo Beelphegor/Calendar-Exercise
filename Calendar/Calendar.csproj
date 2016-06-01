@@ -61,6 +61,7 @@
     <Content Include="src\angular-route.js" />
     <Content Include="src\app.html" />
     <Content Include="src\app.js" />
+    <Content Include="src\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

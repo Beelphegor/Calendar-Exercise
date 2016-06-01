@@ -7,7 +7,7 @@
             redirectTo: "/"
         });
     });
-app.controller("mainCtrl", function($scope) {
+app.controller("mainCtrl", function ($scope, $http) {
     $scope.startDate = null;
     $scope.numberOfDays = null;
     $scope.countryCode = null;
@@ -51,6 +51,12 @@ app.controller("mainCtrl", function($scope) {
                 });
             }
         }
+
+
+        $http.get("http://holidayapi.com/v1/holidays",{ country: $scope.countryCode, year: $scope.startDate.getFullYear }).then(function success(response) {
+            console.log(response);
+        });
+
 
         console.log($scope.months);
     }
